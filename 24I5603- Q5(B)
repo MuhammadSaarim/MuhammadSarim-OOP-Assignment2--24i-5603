@@ -1,0 +1,17 @@
+2) Algorithm Analysis:
+Perform a runtime analysis for both stack implementations and write a brief report summarizing
+your findings, discussing the time complexity and performance differences between the linked
+list-based stack and the array-based stack (you will analyze insertion and deletion complexity).
+
+                               ANSWER
+
+
+Both stack implementations one using a linked list and the other using a dynamic array perform basic operations like push, pop, and top very efficiently.
+
+In the linked list–based stack, both push and pop operations always take constant time O(1) since elements are simply added or removed from the top node without any need to move existing data. The only drawback is slightly higher memory usage, as each node must store a pointer to the next node.
+
+In the array-based stack, the pop operation also takes O(1) time, and push is normally constant time as well. However, when the array runs out of space, it must resize itself by creating a larger array and copying all existing elements, which makes that particular push take O(n) time. Because this happens occasionally, the average or amortized cost of push remains O(1). Memory can sometimes be wasted if the array expands more than necessary.
+
+In terms of performance, the array stack is usually faster since all elements are stored contiguously in memory, which makes better use of the CPU cache. The linked list stack, on the other hand, never needs to resize, making its performance more stable and predictable, though at the cost of slightly higher memory use.
+
+In conclusion, both stacks are efficient for most cases. The array-based stack often performs a bit faster in practice, while the linked list–based stack provides steadier performance and better handles situations where the number of elements can grow unpredictably.
